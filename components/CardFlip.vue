@@ -16,7 +16,7 @@
                             <div class="col-10 text-left">
                                 <div class="pl-3 pr-3 pb-3 pt-2">
                                 <div class="row no-gutters task-name">
-                                    {{taskName}}
+                                    {{task.task_name}}
                                 </div>
                                 <div class="row no-gutters project-name">
                                     {{projectName}} 
@@ -77,8 +77,14 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 export default {
+    props:{
+        task:{
+            type: Object,
+            default: { task_name: 'test'}
+        }
+    },
     components: {
-        // Switches
+        // Switchesc
     },
     data(){
         return{

@@ -19,8 +19,8 @@
                         <img src="img-profile-picture.jpeg" class="img-circle img-profile-nav mr-4" alt="Cinque Terre">
                       </div>
                        <div class="col-6"> <!--col-6 flex-column name-box d-none d-sm-block -->
-                        <div class="text-light mx-2 user-name">{{userName}}</div>
-                        <div class="text-secondary mx-2 user-power">{{userPower}}</div>
+                        <div class="text-light mx-2 user-name">{{this.$auth.user.name}}</div>
+                        <div class="text-secondary mx-2 user-power">{{this.$auth.user.position}}</div>
                       </div>
                     </div>
                   </b-nav-item>         
@@ -29,7 +29,7 @@
               </template>
               <b-dropdown-item href="profile">Profile</b-dropdown-item>
               <b-dropdown-item href="changePassword">Change Password</b-dropdown-item>
-              <b-dropdown-item href="/">Logout</b-dropdown-item>
+              <b-dropdown-item @click="onLogout">Logout</b-dropdown-item>
             </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-navbar>
@@ -40,18 +40,18 @@
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 export default {
-  data() {
-    return {
-      userName: "Iikai",
-      userPower: "User"
-    };
-  },
   computed: {
     fas() {
       return fas;
     },
     faGithub() {
       return faGithub;
+    }
+  },
+  methods:{
+    onLogout: async function(){
+      await this.$auth.logout()
+      this.$router.push("/")
     }
   }
 };
