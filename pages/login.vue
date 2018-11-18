@@ -1,52 +1,36 @@
 <template>
-  <section>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-8 col-md-5 col-sm-12 d-none d-md-block bg-left">
-          <div class="row justify-content-md-center txt-copyright">
-            <p class="text-muted copyright"><strong>Copyright © 2018 Arimac Lanka. All rights reserved.</strong></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-7 col-sm-12 bg-right ">
-          <div class="row justify-content-md-center">
-            <div class="col-lg-9 col-md-8 col-sm-7 col-xs-6 box-container">
-              <div class="row justify-content-md-center my-5">
-                <b-img 
-                  src="/logo-opus.jpg" 
-                  fluid 
-                  alt="OPUS" />
-              </div>
-              <div class="row justify-content-md-center my-4">
-                <div class="form-group">
-                  <ReusableInput 
-                    v-model="login.email" 
-                    active 
-                    type="text" 
-                    placeholder="email" 
-                    @inputEvent="inputEvent"/>
-                  <ReusableInput 
-                    v-model="login.password" 
-                    type="password" 
-                    placeholder="password" 
-                    @inputEvent="inputEvent"/>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 col-md-5 col-sm-12 d-none d-md-block bg-left">
+                    <div class="row justify-content-md-center txt-copyright">
+                        <p class="text-muted copyright"><strong>Copyright © 2018 Arimac Lanka. All rights reserved.</strong></p>
+                    </div>
                 </div>
-              </div>
-              <div class="row justify-content-md-center">
-                <Reusable-button 
-                  :on-click="onLogin" 
-                  :style="{'background-color':btnBgColor, color:btnColor}" 
-                  label="Login" 
-                  class="btn-login"/>
-              </div>
-              <div class="d-flex justify-content-center align-items-center d-block d-md-none fixed-bottom">
-                <p class="text-muted copyright mx-3">Copyright © 2018 Arimac Lanka. All rights reserved.</p>
-              </div>
+                <div class="col-lg-4 col-md-7 col-sm-12 bg-right ">
+                    <div class="row justify-content-md-center">
+                    <div class="col-lg-9 col-md-8 col-sm-7 col-xs-6 box-container">
+                        <div class="row justify-content-md-center my-5">
+                            <b-img src="/logo-opus.jpg" fluid alt="OPUS" />
+                        </div>
+                        <div class="row justify-content-md-center my-4">
+                            <div class="form-group">
+                                <ReusableInput active type="text" v-model="login.email" placeholder="email" @inputEvent="inputEvent"></ReusableInput>
+                                <ReusableInput type="password" v-model="login.password" placeholder="password" @inputEvent="inputEvent"></ReusableInput>
+                            </div>
+                        </div>
+                        <div class="row justify-content-md-center">
+                            <Reusable-button label="Login" class="btn-login" :onClick="onLogin" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center d-block d-md-none fixed-bottom">
+                          <p class="text-muted copyright mx-3">Copyright © 2018 Arimac Lanka. All rights reserved.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section> 
+    </section> 
 </template>
 
 <script>
@@ -54,10 +38,6 @@ import ReusableButton from "~/components/ReusableButton.vue";
 import ReusableInput from "~/components/ReusableInput.vue";
 
 export default {
-  components: {
-    ReusableButton,
-    ReusableInput
-  },
   data() {
     return {
       btnBgColor: "#e74132",
@@ -67,6 +47,10 @@ export default {
         password:''  
       }
     };
+  },
+  components: {
+    ReusableButton,
+    ReusableInput
   },
   methods: {
 
