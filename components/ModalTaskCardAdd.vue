@@ -34,7 +34,7 @@
                         </div>
                         <div class="py-2">
                             <label for="task-name3"><small>Due date</small></label><br>
-                            <!-- <date-picker v-model="time1" :first-day-of-week="1" lang="en" class="form-modal-date-picker"></date-picker> -->
+                            <date-picker v-model="time1" :first-day-of-week="1" lang="en" class="form-modal-date-picker"></date-picker>
                         </div>   
                     </form>
                         <div class="pt-4 pb-5">

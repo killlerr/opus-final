@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="false" type="dark" variant="dark" class="header py-2">
-      <b-navbar-brand href="homeUser"><img src="logo-opus-nav.jpg" class="logo-opus ml-4" alt="Responsive image"> </b-navbar-brand>
+      <b-navbar-brand href="/"><img src="logo-opus-nav.jpg" class="logo-opus ml-4" alt="Responsive image"> </b-navbar-brand>
       
     
       <!-- Right aligned nav items -->
@@ -12,13 +12,13 @@
               <!-- Using button-content slot -->
               <template slot="button-content">
                 <!-- profile -->
-                <div class="container d-flex justify-content-center d-none">
+                <div class="d-flex justify-content-center d-none">
                   <b-nav-item href="profile" class="p-0">
                     <div class="row no-gutters">
-                      <div class="col-6">
-                        <img src="img-profile-picture.jpeg" class="img-circle img-profile-nav mr-4" alt="Cinque Terre">
+                      <div class="col-4">
+                        <img :src="this.$auth.user.profile_pic" class="img-circle img-profile-nav" alt="Cinque Terre">
                       </div>
-                       <div class="col-6"> <!--col-6 flex-column name-box d-none d-sm-block -->
+                       <div class="col-8"> <!--col-6 flex-column name-box d-none d-sm-block -->
                         <div class="text-light mx-2 user-name">{{this.$auth.user.name}}</div>
                         <div class="text-secondary mx-2 user-power">{{this.$auth.user.position}}</div>
                       </div>
@@ -74,9 +74,10 @@ export default {
 .img-profile-nav {
   height: 3rem;
   width: auto;
-  align-content: center;
   border-radius: 50%;
   margin-bottom: 5px;
+  margin: 0px 0px 0px 8px;
+
 }
 
 
@@ -92,14 +93,17 @@ export default {
 /* Profile details */
 
 .user-name{
-  font-size: 16px;
-  font-weight: bolder;
-  text-align:top;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 16px;
 }
 
 .user-power{
-  font-size: 14px;
-  font-weight: bold
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 18px;
 }
 
 .name-box{

@@ -10,7 +10,7 @@
                             <div class="row card-header no-gutters">
                                 <div class="col-2 text-right">
                                 <div class="pr-3 pt-3">
-                                    <p><fa :icon="fas.faCommentAlt" v-bind:style="{color:bgColor}" class="fa-lg"/></p>
+                                    <!-- <p><fa :icon="fas.faCommentAlt" v-bind:style="{color:bgColor}" class="fa-lg"/></p> -->
                                 </div>
                                 </div>
                             <div class="col-10 text-left">
@@ -28,7 +28,7 @@
                                 <div class="col-6 text-left">
                                 <div class="d-flex fex-column">
                                 <div class="pt-1 pr-2">
-                                <fa :icon="fas.faExclamationTriangle" style="{color: #ffffff}" class="fa-sm" />
+                                <!-- <fa :icon="fas.faExclamationTriangle" style="{color: #ffffff}" class="fa-sm" /> -->
                                 </div>
 
                                 <div class="pl-2 days-left pt-1">{{daysLeft}}</div>
@@ -57,7 +57,9 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="center-switch">
-                                            <!-- <switches v-model="enabled"></switches> -->
+                                            <no-ssr>
+                                                <Switches></Switches>
+                                            </no-ssr>
                                         </div>                  
                                     </div>
                                 </div>
@@ -73,8 +75,8 @@
 
 <script>
 // import Switches from 'vue-switches';
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+// import { fas } from '@fortawesome/free-solid-svg-icons'
+// import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 export default {
     props:{
@@ -82,9 +84,6 @@ export default {
             type: Object,
             default: { task_name: 'test'}
         }
-    },
-    components: {
-        // Switchesc
     },
     data(){
         return{
@@ -105,14 +104,14 @@ export default {
             this.$emit('answered');
             }
         },
-    computed: {
-      fas () {
-         return fas
-      },
-      faGithub () {
-         return faGithub
-      }
-    }
+    // computed: {
+    //   fas () {
+    //      return fas
+    //   },
+    //   faGithub () {
+    //      return faGithub
+    //   }
+    // }
 }
 </script>
 

@@ -47,7 +47,7 @@ export default {
 
 }
 
-.input-reusable:focus{
+.input-reusable:focus,.input-reusable:hover {
     border-left: 0.4rem solid #ff5a4e;
     outline: 0;
     /* transition: border 0.2s ease-in-out; */
