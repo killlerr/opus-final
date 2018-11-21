@@ -33,8 +33,9 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/vue-switches', ssr: false },
-    { src: '~/plugins/vue2-datepicker', ssr: false }
+    { src: '~/plugins/vue2-datepicker', ssr: false },
+    { src: '~/plugins/vue-select', ssr: false },
+    { src: '~/plugins/vue-switch', ssr: false },
   ],
 
   /*

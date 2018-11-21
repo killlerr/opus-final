@@ -30,7 +30,7 @@
                         <div class="py-2">
                             <!-- input-select -->
                             <label for="task-name2"><small>Project Name</small></label>
-                            <!-- <Vselect class="form-modal-date-picker"></Vselect> -->
+                            <v-select class="form-modal-date-picker"></v-select>
                         </div>
                         <div class="py-2">
                             <label for="task-name3"><small>Due date</small></label><br>

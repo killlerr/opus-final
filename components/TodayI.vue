@@ -4,7 +4,7 @@
             <div class="row no-gutters">
                 <div class="col-3">
                     <div class="everything-center">
-                        <p><fa :icon="fas.faMapPin" v-bind:style="{color:bgColor}" class="fa-lg"/></p>
+                        <!-- <p><fa :icon="fas.faMapPin" v-bind:style="{color:bgColor}" class="fa-lg"/></p> -->
                     </div>                    
                 </div>
                 <div class="col-9 border-today-right">
@@ -18,9 +18,6 @@
 </template>
 
 <script>
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-
 
 export default {
     data(){
@@ -28,14 +25,6 @@ export default {
             bgColor:'#80818cfa'
         }
     },
-    computed: {
-      fas () {
-         return fas
-      },
-      faGithub () {
-         return faGithub
-      }
-    }
 }
 </script>
 

@@ -37,17 +37,7 @@
 </template>
 
 <script>
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 export default {
-  computed: {
-    fas() {
-      return fas;
-    },
-    faGithub() {
-      return faGithub;
-    }
-  },
   methods:{
     onLogout: async function(){
       await this.$auth.logout()

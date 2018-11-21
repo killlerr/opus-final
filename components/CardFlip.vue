@@ -58,7 +58,7 @@
                                     <div class="col-6">
                                         <div class="center-switch">
                                             <no-ssr>
-                                                <Switches></Switches>
+                                                <switches v-model="enabled"></switches>
                                             </no-ssr>
                                         </div>                  
                                     </div>
