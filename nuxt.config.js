@@ -36,6 +36,7 @@ module.exports = {
     { src: '~/plugins/vue2-datepicker', ssr: false },
     { src: '~/plugins/vue-select', ssr: false },
     { src: '~/plugins/vue-switch', ssr: false },
+    { src: '~/plugins/font-awesome'},
   ],
 
   /*

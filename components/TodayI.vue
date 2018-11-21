@@ -4,7 +4,7 @@
             <div class="row no-gutters">
                 <div class="col-3">
                     <div class="everything-center">
-                        <!-- <p><fa :icon="fas.faMapPin" v-bind:style="{color:bgColor}" class="fa-lg"/></p> -->
+                        <font-awesome-icon icon="map-pin" v-bind:style="{color:bgColor}" class="fa-lg" />
                     </div>                    
                 </div>
                 <div class="col-9 border-today-right">
