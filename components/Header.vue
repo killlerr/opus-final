@@ -6,7 +6,7 @@
     
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-            <b-nav-item href="messageArea" class="p-0"><font-awesome-icon icon="comments" :style="{ color: '' }" class="fa-lg m-3"/></b-nav-item>
+            <!-- <b-nav-item href="messageArea" class="p-0"><font-awesome-icon icon="comments" :style="{ color: '' }" class="fa-lg m-3"/></b-nav-item> -->
             <b-nav-item-dropdown right class="p-0">
               <!-- Using button-content slot -->
               <template slot="button-content">

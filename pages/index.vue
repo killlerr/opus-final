@@ -1,7 +1,11 @@
 <template>
     <div>
-        <Header></Header>
-        <tabs class="no-padding"></tabs>
+        <no-ssr>
+            <Header></Header>
+        </no-ssr>
+        <no-ssr>
+            <tabs class="no-padding"></tabs>
+        </no-ssr>
     </div>
 
 </template>

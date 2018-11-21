@@ -1,6 +1,8 @@
 <template>
     <div class="bg-opus">
-        <Header></Header>
+        <no-ssr>
+            <Header></Header>
+        </no-ssr>
         <div class="container center-justify-everything mt-5">
             <b-card class="my-3 card--width">
                 <div class="p-4">
