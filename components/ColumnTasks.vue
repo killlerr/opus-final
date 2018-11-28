@@ -11,9 +11,8 @@
             <ModalTaskCardAdd></ModalTaskCardAdd>
         </div>
         <div class="margin-top-from-btn">
-            <CardFlip v-for="task in tasks" :key="task.task_id" :task="task" class="mb-4"></CardFlip>
+            <CardFlip v-for="incompleteTask in incompleteTasks" :key="incompleteTask.task_id" :task="incompleteTask" class="mb-4"></CardFlip>
         </div>
-        <b-button>Button</b-button>
                  
 </div>
 
@@ -24,6 +23,7 @@ import ReusableButton from '~/components/ReusableButton.vue'
 import CardFlip from '~/components/CardFlip.vue'
 import ModalTaskCardAdd from '~/components/ModalTaskCardAdd.vue'
 import { mapState } from 'vuex'
+
 
 export default {
     data(){
@@ -43,7 +43,7 @@ export default {
 
     computed: {
         ...mapState({
-            tasks: 'incompleteTasks'
+            incompleteTasks: 'incompleteTasks'
         })
     },
 
@@ -52,17 +52,6 @@ export default {
             console.log("Added New Card")
         }
     },
-    // async task(){
-    //     let { data: tasks } = await this.$axios.$get( 'webapi/tasks/completed' )
-    //     return tasks
-    // },
-    // created(){
-    //     // this.$axios.get('http://opus-api.devops.arimac.xyz/webapi/tasks')
-    //     data:{
-    //     let tasks =  this.$axios.$get( 'http://opus-api.devops.arimac.xyz/webapi/tasks' )
-
-    //     }
-    // }
 }
 
 

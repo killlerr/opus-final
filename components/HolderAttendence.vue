@@ -106,7 +106,7 @@ import TodayI from "~/components/TodayI.vue"
 // import EditedDatepicker from "~/components/EditedDatepicker"
 
 // import CustomDatepicker from 'vue-custom-datepicker'
-import moment from 'moment'
+// import moment from 'moment'
 export default {
     data() {
         return {
@@ -120,7 +120,7 @@ export default {
                 'Present', 'Absent', 'Working from home'
             ],
       show: true,
-      selectedDate: moment().format('YYYY-MM-DD'),
+    //   selectedDate: moment().format('YYYY-MM-DD'),
     //   wrapperStyles: { width: '325px' },
     //   primaryColor: "#0918bc",
     //   limits: {

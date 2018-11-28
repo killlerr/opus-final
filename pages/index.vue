@@ -18,6 +18,7 @@ export default {
 
     async fetch({ store }) {
         await store.dispatch('fetchIncompleteTasks')
+        await store.dispatch('fetchCompletedTasks')
     },
 
     components: {

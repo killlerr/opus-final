@@ -5,7 +5,7 @@
     <footer class="blockquote-footer bqf">Lorem ipsum dolor sit amet consectetur</footer>
     </div>
     <div>
-        <CardFlip></CardFlip>
+        <CardFlip v-for="completedTask in completedTasks" :key="completedTask.task_id" :task="completedTask"></CardFlip>
     </div>
     
  
@@ -14,11 +14,17 @@
 
 <script>
 import CardFlip from '~/components/CardFlip.vue'
+import { mapState } from 'vuex'
 
 export default {
 
     components:{
         CardFlip,
+    },
+    computed:{
+        ...mapState({
+            completedTasks: 'completedTasks'
+        })
     }
     
 }

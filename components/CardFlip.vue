@@ -19,7 +19,7 @@
                                     {{task.task_name}}
                                 </div>
                                 <div class="row no-gutters project-name">
-                                    {{projectName}} 
+                                    {{task.project_name}} 
                                 </div>                   
                                 </div>                  
                             </div>
@@ -31,11 +31,11 @@
                                 <font-awesome-icon icon="exclamation-triangle" style="{color: #ffffff}" class="fa-sm" ></font-awesome-icon>
                                 </div>
 
-                                <div class="pl-2 days-left pt-1">{{daysLeft}}</div>
+                                <div class="pl-2 days-left pt-1">{{task.remain_days}}</div>
                                 </div>
                                 </div>
                                 <div class="col-6 text-right due-date pt-2">
-                                {{dueDate}}
+                                {{task.deadline}}
                                 </div>
                             </div>
                             </div>
@@ -74,10 +74,6 @@
 </template>
 
 <script>
-// import Switches from 'vue-switches';
-// import { fas } from '@fortawesome/free-solid-svg-icons'
-// import { faGithub } from '@fortawesome/free-brands-svg-icons'
-
 export default {
     props:{
         task:{
@@ -88,12 +84,6 @@ export default {
     data(){
         return{
             bgColor: '#ff5a4e',
-            isToggled: false,
-            enabled: false,
-            taskName: 'Task default‑ Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
-            projectName: 'default Lorem ipsum dolor sit amet',
-            dueDate: 'June 15th 2016',
-            daysLeft: '2 days left'
         }
     },
     methods: {
