@@ -15,7 +15,12 @@ import Header from '~/components/Header.vue'
 import Tabs from '~/components/Tabs.vue'
 
 export default {
-        components: {
+
+    async fetch({ store }) {
+        await store.dispatch('fetchIncompleteTasks')
+    },
+
+    components: {
         Header,
         Tabs
     }

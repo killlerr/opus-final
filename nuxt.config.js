@@ -36,7 +36,7 @@ module.exports = {
     { src: '~/plugins/vue2-datepicker', ssr: false },
     { src: '~/plugins/vue-select', ssr: false },
     { src: '~/plugins/vue-switch', ssr: false },
-    { src: '~/plugins/font-awesome'},
+    { src: '~/plugins/font-awesome'}
   ],
 
   /*
@@ -61,6 +61,10 @@ module.exports = {
         // tokenRequired: true,
         // tokenType: 'bearer',
       }
+    },
+    redirect: {
+      logout: '/login',
+      login: '/login'
     }
   },
 
