@@ -57,8 +57,8 @@ export default {
     onLogin: function() {
       this.$auth.loginWith('local',{
         data:{
-          email: 'indika@arimaclanka.com',
-          password: '123'
+          email: 'indika@arimaclanka.com', //this.login.email,
+          password: '123' //this.login.password
         }
       })
     },
