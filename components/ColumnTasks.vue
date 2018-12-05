@@ -22,7 +22,7 @@
 import ReusableButton from '~/components/ReusableButton.vue'
 import CardFlip from '~/components/CardFlip.vue'
 import ModalTaskCardAdd from '~/components/ModalTaskCardAdd.vue'
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 
 export default {
@@ -42,10 +42,25 @@ export default {
     },
 
     computed: {
-        ...mapState({
-            incompleteTasks: 'incompleteTasks'
-        })
+        // ...mapState({
+        //     incompleteTasks: 'incompleteTasks'
+        // }),
+        ...mapGetters({
+            incompleteTasks: 'availableTasks'
+        }),
+        // incompleteTasks(){
+        //     return this.$store.getters.availableTasks
+        // }
+        // incompleteTasks(){
+        //     return this.$store.state.incompleteTasks
+        // }
+        
     },
+    // created() {
+    //     store.getNewTasks(incompleteTasks => {
+    //         store.commit('setNewTasks', incompleteTasks)
+    //     })
+    // },
 
     methods: {
         doSomething: function () {

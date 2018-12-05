@@ -12,7 +12,7 @@
                             <div class="profile-hl"></div>
                         </div>
                         <div class="center-justify-everything py-4">
-                            <img :src="this.$auth.user.profile_pic" class="img-profile" alt="Cinque Terre">
+                            <img :src="profileInfo.profile_pic" class="img-profile" alt="Cinque Terre">
                             <div class="camera-icon__background">
                             </div>
                             <!-- <fa :icon="fas.faCamera"  :style="{ color: '#a2a2ab' }" class="fa-lg m-3 camera-icon"/> -->
@@ -32,7 +32,8 @@
                             <!-- <label>Contact Number:</label> -->
                             <ReusableInput v-model="profile.contactNumber" placeholder="Your contact Number" class="profile-input"></ReusableInput>
                             <div class="pt-4">
-                                <ReusableButton label="Save Changes" @click="onSave"></ReusableButton>
+                                <ReusableButton label="Save Changes" @click="onSave()"></ReusableButton>
+                                <button @click="onSave()">button</button>
                             </div>
                         </div>
                     </b-card>
@@ -46,12 +47,14 @@
 import ReusableInput from '~/components/ReusableInput.vue'
 import ReusableButton from '~/components/ReusableButton.vue'
 import Header from '~/components/Header.vue'
+import {mapState} from 'vuex'
 // import { fas } from "@fortawesome/free-solid-svg-icons";
 // import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default {
     data(){
         return{
+            // params: this.$auth.user.user_id
             profile:{
                 name: this.$auth.user.name,
                 contactNumber: this.$auth.user.contact_no
@@ -64,18 +67,27 @@ export default {
         Header
     },
     methods:{
-        onSave(){
+        async onSave(){
             console.log("Save Clicked")
+            await this.$store.dispatch({
+                type: 'saveProfileInfo', 
+                name: 'Indika'
+                
+            //     profile);
+            // this.profile = {
+            //     name :  'Indika',
+            //     contact_no : ''
+            })
         }
     },
-    // computed: {
-    //     fas() {
-    //     return fas;
-    //     },
-    //     faGithub() {
-    //     return faGithub;
-    //     }
-    // }
+    async fetch({store}){
+        await store.dispatch('fetchProfileInfo')
+    },
+    computed:{
+        ...mapState({
+            profileInfo : 'profileInfo'
+        })
+    }
 }
 </script>
 

@@ -78,30 +78,26 @@ export default {
     props:{
         task:{
             type: Object,
-            default: { task_name: 'test'}
+            default: { task_name: '',
+            project_name: 'test',
+            remain_days: '0',
+            deadline: '12-12-1212'}
         }
     },
     data(){
         return{
             bgColor: '#ff5a4e',
+            enabled: false
         }
     },
     methods: {
             onNextQuestion() {
-                this.$emit('confirmed');
+            this.$emit('confirmed');
             },
             onAnswer(){
             this.$emit('answered');
             }
         },
-    // computed: {
-    //   fas () {
-    //      return fas
-    //   },
-    //   faGithub () {
-    //      return faGithub
-    //   }
-    // }
 }
 </script>
 
